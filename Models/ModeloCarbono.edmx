@@ -4,17 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HuelladeCarbonoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="entidad">
-          <Key>
-            <PropertyRef Name="idEntidad" />
-          </Key>
-          <Property Name="idEntidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="clave" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
+    <Schema Namespace="HuelladeCarbonoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="informes">
           <Key>
             <PropertyRef Name="idInformes" />
@@ -24,41 +14,16 @@
           <Property Name="promedio" Type="float" Nullable="false" />
           <Property Name="cantidad" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="usuario">
-          <Key>
-            <PropertyRef Name="idUsuario" />
-          </Key>
-          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="contraseña" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="nombres" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="apellidos" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="edad" Type="int" Nullable="false" />
-          <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="telefono" Type="int" Nullable="false" />
-          <Property Name="entidad" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="nombreentidad" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityContainer Name="HuelladeCarbonoModelStoreContainer">
-          <EntitySet Name="entidad" EntityType="Self.entidad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="informes" EntityType="Self.informes" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
-        </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+          </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HuelladeCarbonoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="entidad">
-          <Key>
-            <PropertyRef Name="idEntidad" />
-          </Key>
-          <Property Name="idEntidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="clave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
+        <EntityContainer Name="HuelladeCarbonoEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="informes" EntityType="HuelladeCarbonoModel.informes" />
+        </EntityContainer>
         <EntityType Name="informes">
           <Key>
             <PropertyRef Name="idInformes" />
@@ -68,66 +33,19 @@
           <Property Name="promedio" Type="Double" Nullable="false" />
           <Property Name="cantidad" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="usuario">
-          <Key>
-            <PropertyRef Name="idUsuario" />
-          </Key>
-          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="usuario1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="edad" Type="Int32" Nullable="false" />
-          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="telefono" Type="Int32" Nullable="false" />
-          <Property Name="entidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nombreentidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
-        <EntityContainer Name="HuelladeCarbonoEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="entidad" EntityType="Self.entidad" />
-          <EntitySet Name="informes" EntityType="Self.informes" />
-          <EntitySet Name="usuario" EntityType="Self.usuario" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="HuelladeCarbonoModelStoreContainer" CdmEntityContainer="HuelladeCarbonoEntities1">
-          <EntitySetMapping Name="entidad">
-            <EntityTypeMapping TypeName="HuelladeCarbonoModel.entidad">
-              <MappingFragment StoreEntitySet="entidad">
-                <ScalarProperty Name="idEntidad" ColumnName="idEntidad" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="correo" ColumnName="correo" />
-                <ScalarProperty Name="clave" ColumnName="clave" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="informes">
             <EntityTypeMapping TypeName="HuelladeCarbonoModel.informes">
               <MappingFragment StoreEntitySet="informes">
-                <ScalarProperty Name="idInformes" ColumnName="idInformes" />
-                <ScalarProperty Name="sumatoria" ColumnName="sumatoria" />
-                <ScalarProperty Name="promedio" ColumnName="promedio" />
                 <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="usuario">
-            <EntityTypeMapping TypeName="HuelladeCarbonoModel.usuario">
-              <MappingFragment StoreEntitySet="usuario">
-                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
-                <ScalarProperty Name="usuario1" ColumnName="usuario" />
-                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
-                <ScalarProperty Name="nombres" ColumnName="nombres" />
-                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
-                <ScalarProperty Name="edad" ColumnName="edad" />
-                <ScalarProperty Name="correo" ColumnName="correo" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="entidad" ColumnName="entidad" />
-                <ScalarProperty Name="nombreentidad" ColumnName="nombreentidad" />
+                <ScalarProperty Name="promedio" ColumnName="promedio" />
+                <ScalarProperty Name="sumatoria" ColumnName="sumatoria" />
+                <ScalarProperty Name="idInformes" ColumnName="idInformes" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

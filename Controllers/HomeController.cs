@@ -28,12 +28,6 @@ namespace Huella_de_Carbono.Controllers
             return View();
         }
 
-        public void prove(usuario a)
-        {
-            using (var db = new HuelladeCarbonoEntities1())
-            {
-                var al = db.usuario.Find(a.idUsuario);
-            }       
-        }
+        
     }
 }

@@ -5,9 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ff83e96b98464522b1b4890b9a7a530f" Name="Diagram1">
-        <EntityTypeShape EntityType="HuelladeCarbonoModel.entidad" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HuelladeCarbonoModel.informes" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HuelladeCarbonoModel.usuario" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HuelladeCarbonoModel.informes" Width="1.5" PointX="3.25" PointY="1.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

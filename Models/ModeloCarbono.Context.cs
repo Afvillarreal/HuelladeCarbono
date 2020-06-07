@@ -25,8 +25,6 @@ namespace Huella_de_Carbono.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<entidad> entidad { get; set; }
         public virtual DbSet<informes> informes { get; set; }
-        public virtual DbSet<usuario> usuario { get; set; }
     }
 }
