@@ -19,4 +19,5 @@ namespace Huella_de_Carbono.Models
         public double promedio { get; set; }
         public int cantidad { get; set; }
     }
+
 }

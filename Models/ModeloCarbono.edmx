@@ -16,7 +16,7 @@
         </EntityType>
         <EntityContainer Name="HuelladeCarbonoModelStoreContainer">
           <EntitySet Name="informes" EntityType="Self.informes" Schema="dbo" store:Type="Tables" />
-          </EntityContainer>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
