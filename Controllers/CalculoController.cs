@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace Huella_de_Carbono.Controllers
 {
@@ -32,6 +33,31 @@ namespace Huella_de_Carbono.Controllers
             
         }
 
+        public static int numcantidad()
+        {
+            using (var db = new HuelladeCarbonoEntities1())
+            {                
+                return db.informes.Count();
+            }
+                
+        }
+
+        public static double sumatodo()
+        {
+            using (var db = new HuelladeCarbonoEntities1())
+            {
+                double total = 0;
+                var lista = db.informes.ToList();
+                foreach(var i in lista)
+                {                    
+                    total += i.sumatoria;
+                }
+                total /= numcantidad();
+                return total;
+            }
+
+        }
+
         [HttpPost]
         public ActionResult Index(informes ing)
         {
@@ -44,8 +70,7 @@ namespace Huella_de_Carbono.Controllers
             {
                 using(var db = new HuelladeCarbonoEntities1())
                 {
-                    //ing.bustime *=  2;
-                    //ing.sumatoria += ing.bustime;
+                    
                     db.informes.Add(ing);
                     db.SaveChanges();
 
@@ -60,6 +85,6 @@ namespace Huella_de_Carbono.Controllers
             
         }
 
-
+        
     }
 }
