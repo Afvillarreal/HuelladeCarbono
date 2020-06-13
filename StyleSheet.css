@@ -1,20 +1,64 @@
 ﻿body {
-    margin:0;
-    padding:0;
 }
 
-.agrupar{
-    background-color:purple;
+.color{
+    color:blue
+    
 }
+
+.fondo {
+    background-color: white;
+}
+
+.otro{
+    background-color: whitesmoke;
+}
+
+.espacio {
+    text-decoration: none;
+    padding: 3px;
+    
+    height:33px;
+    width: 285px;   
+    font-family: helvetica;
+    font-weight: 100;
+    font-size: 19px;
+    font-style: normal;
+    color: #353030;
+    background-color: white;
+    border-radius: 5px;
+    border: 3px;
+}
+
+
 
 .boton_personalizado {
-
     text-decoration: none;
     padding: 10px;
     font-weight: 600;
     font-size: 20px;
-    color: white;
-    background-color: whitesmoke;
-    border-radius: 6px;
-    
+    color: black;
+    background-color: white;
+    border-radius:10px;
+    border: 2px solid grey;
 }
+
+
+a.my-class {
+    color: #333333
+}
+
+a.my-class:active {
+        color: #666666
+}
+
+a.my-class:link {
+        color: #999999
+}
+
+a.my-class:visited {
+        color: #CCCCCC
+}
+
+
+

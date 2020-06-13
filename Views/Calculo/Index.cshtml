@@ -5,82 +5,106 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<link href="~/StyleSheet.css" rel="stylesheet" />
+<h2 class="titulo">Calculo</h2>
 
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+<body class="otro">
 
-<div class="form-horizontal">
-    <h4>informes</h4>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-    <hr />
+    
+    <div class="form-horizontal">
+        <h4>informes</h4>
+
+        <hr />
+
+        
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.meat, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                
+                @Html.EditorFor(model => Model.meat, new { htmlAttributes = new { @class = "range" } })  
+
+                @Html.ValidationMessageFor(model => model.meat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cartime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cartime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cartime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.mototime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.mototime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.mototime, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.cartime, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.cartime, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.cartime, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.bustime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.bustime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.sumatoria, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <hr />
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.suma, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <p class="espacio">@Html.DisplayFor(model => model.suma, new { htmlAttributes = new { @class = "form-control" } })</p>
+                @Html.ValidationMessageFor(model => model.suma, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.total, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                <p class="espacio">@Html.DisplayFor(model => model.total, new { htmlAttributes = new { @class = "form-control" } })</p>
+                @Html.ValidationMessageFor(model => model.total, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.intentos, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <p class="espacio">@Html.DisplayFor(model => model.intentos)</p>
+
+                @Html.ValidationMessageFor(model => model.intentos, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Calcular" class="btn btn-default" />
+            </div>
         </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.mototime, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.mototime, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.mototime, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.bustime, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.bustime, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.sumatoria, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.suma, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.suma, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.suma, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.total, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-
-            @Html.DisplayFor(model => model.total, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.total, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.intentos, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.intentos, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.intentos, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Calcular" class="btn btn-default" />
-        </div>
-    </div>
-</div>
-}
+    }
+</body>
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    
+
+    <button class="form-control-static">@Html.ActionLink("Regresar", "Index", "Home") </button>
 </div>
 
 @section Scripts {
