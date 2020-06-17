@@ -21,19 +21,28 @@
 
         <hr />
 
-        
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.meat, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                
-                @Html.EditorFor(model => Model.meat, new { htmlAttributes = new { @class = "range" } })  
+
+                <input type="range" min="1" max="7" @Html.EditorFor(model => Model.meat)>
+
 
                 @Html.ValidationMessageFor(model => model.meat, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cartime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cartime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cartime, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.cartime, htmlAttributes: new { @class = "control-label col-md-2" })
