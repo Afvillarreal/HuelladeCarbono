@@ -24,6 +24,8 @@ namespace Huella_de_Carbono.Models
     public partial class informes
     {
         public int otero { get; set; }
+        public int otero2 { get; set; }
+        public int otero3 { get; set; }
 
     }
 }
