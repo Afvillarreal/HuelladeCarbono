@@ -42,6 +42,15 @@ namespace Huella_de_Carbono.Controllers
                 
         }
 
+        public static int numcantidad2()
+        {
+            using (var db = new HuelladeCarbonoEntities1())
+            {
+                return db.informes.Count();
+            }
+
+        }
+
         public static double sumatodo()
         {
             using (var db = new HuelladeCarbonoEntities1())
